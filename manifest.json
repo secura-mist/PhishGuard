@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - Real-Time Phishing Protection",
+  "version": "1.1.0",
+  "description": "AI and Threat-Intelligence powered real-time phishing and scam website detection.",
+  
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "notifications"
+  ],
+
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "*://*.googleapis.com/*",
+    "*://checkurl.phishtank.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "warning.html",
+        "styles.css",
+        "icons/icon16.png",
+        "icons/icon48.png",
+        "icons/icon128.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

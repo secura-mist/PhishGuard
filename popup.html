@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 320px;
+      background-color: #0f172a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #1e293b;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #334155;
+    }
+    .logo {
+      font-weight: bold;
+      color: #22d3ee;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .status-indicator {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+    .safe {
+      background-color: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      border: 2px solid #10b981;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+    .danger {
+      background-color: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    }
+    h2 { margin: 0 0 5px 0; font-size: 20px; }
+    p { margin: 0; color: #94a3b8; font-size: 14px; }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #334155;
+    }
+    .stat-item { text-align: center; }
+    .stat-val { display: block; font-weight: bold; font-size: 18px; }
+    .stat-label { font-size: 10px; color: #94a3b8; text-transform: uppercase; }
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #22d3ee;
+      color: #0f172a;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background-color: #67e8f9; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">PHISHGUARD</div>
+  </div>
+  <div class="content">
+    <div id="status-icon" class="status-indicator safe">✓</div>
+    <h2 id="status-text">Site is Secure</h2>
+    <p id="status-desc">No threats detected on this domain.</p>
+    
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-val" style="color: #22d3ee">1,284</span>
+        <span class="stat-label">Scanned</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val" style="color: #ef4444">24</span>
+        <span class="stat-label">Blocked</span>
+      </div>
+    </div>
+    
+    <button id="scan-btn">Run Deep Scan</button>
+    <button id="test-btn" style="background-color: #ef4444; margin-top: 10px;">Test Phishing Block</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

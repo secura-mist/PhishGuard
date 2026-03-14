@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+      background: #1e293b;
+      border-radius: 20px;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 50px rgba(239, 68, 68, 0.2);
+    }
+    .icon {
+      font-size: 80px;
+      color: #ef4444;
+      margin-bottom: 20px;
+    }
+    h1 { color: #ef4444; margin-bottom: 10px; }
+    p { color: #94a3b8; line-height: 1.6; }
+    .url-box {
+      background: #0f172a;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      color: #ef4444;
+      margin: 20px 0;
+      word-break: break-all;
+    }
+    .btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .btn:hover { background: #dc2626; }
+    .back-btn {
+      background: transparent;
+      border: 1px solid #94a3b8;
+      margin-left: 10px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">⚠️</div>
+    <h1>PhishGuard Blocked This Site</h1>
+    <p>This website has been flagged as dangerous. It may be attempting to steal your personal information, passwords, or credit card details.</p>
+    
+    <div class="url-box" id="target-url">Loading...</div>
+    
+    <button class="btn" onclick="window.history.back()">Go Back to Safety</button>
+    <button class="btn back-btn" onclick="alert('Proceeding at your own risk...')">Proceed Unsafely</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('target-url').innerText = params.get('target') || 'Unknown URL';
+  </script>
+</body>
+</html>
