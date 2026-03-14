@@ -31,7 +31,7 @@ const TYPOSQUATTING_TARGETS = {
 
 // 🛡️ Google Safe Browsing Check
 async function checkGoogleSafeBrowsing(url) {
-  const apiKey = "AIzaSyBWgNdV8MDMA0UWt2s9RINbhlmjWK6z0iE"; // Replace with your key
+  const apiKey = "YOUR_API_KEY"; // Replace with your key
   const endpoint = `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${apiKey}`;
 
   const reqBody = {
